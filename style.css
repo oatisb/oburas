@@ -54,23 +54,24 @@ h2, h3, p {
             justify-content: space-around;
             gap: 20px;
             padding: 20px;
+            align-items: flex-start;
+  
         }
 
         .gallery {
-            flex: 1 1 calc(50% - 40px); /* Two columns with spacing */
-            max-width: calc(50% - 40px);
-            background: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            overflow: hidden;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: calc(33.0% - 40px); 
+            max-width: calc(60% - 40px);
+            border:1px solid #ccc;
+            border-radius: 9px;
+            overflow: hidden;        
         }
 
         .gallery img {
             width: 100%;
             height: auto;
             transition: transform 0.3s, box-shadow 0.3s;
+           display: block; 
+           margin-bottom: 0;
         }
 
         .gallery img:hover {
@@ -78,10 +79,26 @@ h2, h3, p {
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
-        .desc {
-            padding: 15px;
-            color: 5C4033;
-        }
+        .gallery {
+  position: relative;
+}
+
+.desc {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background-color: rgba(20, 0, 0, 0.7); /* Semi-transparent background */
+  color: #fff;
+  text-align: center;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.gallery:hover .desc {
+  opacity: 1; /* Show description when hovering over the gallery */
+}
 
         /* Responsive design for smaller screens */
         @media (max-width: 768px) {
